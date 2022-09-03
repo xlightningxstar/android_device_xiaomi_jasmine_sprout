@@ -994,7 +994,7 @@ vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
+vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so|7fcd56f2757c044d7bf562a63c1ab517b9a33bbc
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # Gatekeeper

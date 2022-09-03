@@ -43,4 +43,7 @@ patchelf --replace-needed libstdc++.so libstdc++_vendor.so "$DEVICE_BLOB_ROOT"/v
 patchelf --replace-needed libstdc++.so libstdc++_vendor.so "$DEVICE_BLOB_ROOT"/vendor/lib/libubifocus.so
 patchelf --replace-needed libstdc++.so libstdc++_vendor.so "$DEVICE_BLOB_ROOT"/vendor/lib/lib_lowlight.so
 
+patchelf --remove-needed libhidltransport.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
+patchelf --replace-needed libhidlbase.so libhidlbase-v32.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
+
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
