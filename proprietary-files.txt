@@ -989,7 +989,7 @@ vendor/firmware/fpctzappfingerprint.b07
 vendor/firmware/fpctzappfingerprint.mdt
 
 # Fingerprint sensor
-vendor/lib64/hw/fingerprint.fpc.default.so
+vendor/lib64/hw/fingerprint.fpc.default.so|db2c71aa0fe65aff6756525727078e7f4a2809f4
 vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so

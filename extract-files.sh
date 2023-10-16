@@ -45,5 +45,7 @@ patchelf --replace-needed libstdc++.so libstdc++_vendor.so "$DEVICE_BLOB_ROOT"/v
 
 patchelf --remove-needed libhidltransport.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
 patchelf --replace-needed libhidlbase.so libhidlbase-v32.so "$DEVICE_BLOB_ROOT"/vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
+patchelf --remove-needed libhidltransport.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/fingerprint.fpc.default.so
+patchelf --replace-needed libhidlbase.so libhidlbase-v32.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/fingerprint.fpc.default.so
 
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
