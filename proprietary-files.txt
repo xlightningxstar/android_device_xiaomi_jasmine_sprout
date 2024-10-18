@@ -16,8 +16,8 @@ vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Camera - from clover
--vendor/lib/libts_face_beautify_hal.so|4cc684d316706d4645d6e06ef6a46e15f988067d
--vendor/lib/libts_detected_face_hal.so|d000a683dd5d2b8a16201e1ef6d68234d76d2f9f
+vendor/lib/libts_face_beautify_hal.so|4cc684d316706d4645d6e06ef6a46e15f988067d
+vendor/lib/libts_detected_face_hal.so|d000a683dd5d2b8a16201e1ef6d68234d76d2f9f
 
 # Camera - from lavender V10.3.6.0.PFGMIXM
 vendor/lib/libSNPE.so|66f23aae6d30b09121f06635c749d6ae47543359
