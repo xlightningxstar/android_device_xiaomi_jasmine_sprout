@@ -29,12 +29,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Build Description
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        TARGET_DEVICE="lavender" \
-        PRODUCT_NAME="lavender" \
-        PRIVATE_BUILD_DESC="lavender-user 10 QKQ1.190910.002 V12.5.3.0.QFGCNXM release-keys"
-
-# Build Fingerprint
-BUILD_FINGERPRINT := "xiaomi/lavender/lavender:10/QKQ1.190910.002/V12.5.3.0.QFGCNXM:user/release-keys"
+    BuildDesc="lavender-user 10 QKQ1.190910.002 V12.5.3.0.QFGCNXM release-keys" \
+    BuildFingerprint=xiaomi/lavender/lavender:10/QKQ1.190910.002/V12.5.3.0.QFGCNXM:user/release-keys \
+    DeviceProduct=lavender
 
 # Device identifier
 PRODUCT_NAME := lineage_lavender
