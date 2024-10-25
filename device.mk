@@ -566,7 +566,6 @@ PRODUCT_PACKAGES += \
 
 # Retrofit Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
     check_dynamic_partitions
