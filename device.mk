@@ -57,8 +57,7 @@ PRODUCT_PACKAGES += \
     LavenderFrameworksOverlay \
     LavenderSettingsOverlay \
     LavenderSystemUIOverlay \
-    NoCutoutOverlay \
-    NotchBarKiller
+    NoCutoutOverlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
