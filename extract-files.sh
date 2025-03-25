@@ -26,6 +26,12 @@ function blob_fixup() {
             "${PATCHELF}" --remove-needed "libhidltransport.so" "${2}"
             "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
             ;;
+        vendor/lib/libmmcamera_faceproc.so)
+            [ "$2" = "" ] && return 0
+           "${PATCHELF}" --clear-symbol-version "__aeabi_memcpy" "${2}"
+           "${PATCHELF}" --clear-symbol-version "__aeabi_memset" "${2}"
+           "${PATCHELF}" --clear-symbol-version "__gnu_Unwind_Find_exidx" "${2}"
+            ;;
         *)
             return 1
             ;;
