@@ -35,8 +35,8 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 TARGET_SCREEN_DENSITY := 420
 
 # Kernel
-TARGET_KERNEL_CONFIG := lavender_defconfig
-
+TARGET_KERNEL_CONFIG += vendor/xiaomi/lavender.config
+ 
 # Manifest
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/framework_compatibility_matrix.xml
