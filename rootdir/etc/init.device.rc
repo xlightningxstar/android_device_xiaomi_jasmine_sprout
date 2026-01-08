@@ -29,10 +29,6 @@ on post-fs
     wait_for_prop vendor.sys.listeners.registered true
 
 on boot
-	# Set permission for double tap to wake support
-    chmod 0660 /sys/touchpanel/double_tap
-    chown system system /sys/touchpanel/double_tap
-
     # Camera
     chmod 0660 /sys/android_camera/sensor
     chown system system /sys/android_camera/sensor
