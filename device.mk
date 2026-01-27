@@ -5,6 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Powerhint - Disable uclamp
+DEVICE_SUPPORTS_UCLAMP := false
+
 # Inherit the sdm660-common definitions
 $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
