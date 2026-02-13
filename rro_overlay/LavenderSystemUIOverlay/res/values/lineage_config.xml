@@ -4,5 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <dimen name="rounded_corner_content_padding">20dp</dimen>
+    <!-- Doze: does the double tap sensor need a proximity check? -->
+    <bool name="doze_double_tap_proximity_check">true</bool>
 </resources>
