@@ -9,70 +9,68 @@
 $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
 # Device Path
-DEVICE_PATH := device/xiaomi/lavender
+DEVICE_PATH := device/xiaomi/jasmine_sprout
 
-# Soong
+# Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-	 $(DEVICE_PATH)/overlay \
-	 $(DEVICE_PATH)/overlay-lineage
+    $(DEVICE_PATH)/overlay
 
-# PRODUCT_SHIPPING_API_LEVEL indicates the first api level, device has been commercially launched on.
-PRODUCT_SHIPPING_API_LEVEL := 28
+# jasmine launched on Android 8.1 (API 27)
+PRODUCT_SHIPPING_API_LEVEL := 27
 
 # Audio
 PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
-	$(DEVICE_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-	$(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+    $(DEVICE_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
+    $(DEVICE_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 
-# Camera
+# Camera — jasmine has 12MP+20MP dual rear, 20MP front
 PRODUCT_PACKAGES += \
-    camera.sdm660 \
-    libMegviiFacepp-0.5.2
+    camera.sdm660
 
-# Consumerir
+# ConsumerIR — jasmine HAS IR blaster
 BOARD_HAVE_IR := true
 
 # Device properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
-# Fingerprints
+# Fingerprints — jasmine uses Goodix/FPC
 PRODUCT_PACKAGES += \
-    com.fingerprints.extension@2.0.vendor
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
 
-# FM
-BOARD_HAVE_QCOM_FM := true
+# FM Radio — jasmine does NOT have FM radio
+# BOARD_HAVE_QCOM_FM is intentionally NOT set here
 
 # Overlays
 PRODUCT_PACKAGES += \
-    LavenderApertureOverlay \
-    LavenderFrameworksOverlay \
-    LavenderSettingsOverlay \
-    LavenderSystemUIOverlay \
+    JasmineFrameworksOverlay \
+    JasmineSettingsOverlay \
+    JasmineSystemUIOverlay \
+    JasmineWifiOverlay \
     NoCutoutOverlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml
 
-# Properties 
+# Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)/configs/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl
+    $(DEVICE_PATH)/configs/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-	init.device.rc
+    init.device.rc
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -80,29 +78,20 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Sensors
 PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
-	$(DEVICE_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-	$(DEVICE_PATH)/configs/sensors/elliptic.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/elliptic.conf
+    $(DEVICE_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(DEVICE_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
-# Wifi
+# WiFi
 PRODUCT_PACKAGES += \
-    LavenderWifiOverlay
+    JasmineWifiOverlay
 
 # WiFi Firmware Symlinks
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink
 
 # Vendor files
-$(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
-
-# AOSP DEVICE
-PRODUCT_NAME := aosp_lavender
-PRODUCT_DEVICE := lavender
-PRODUCT_MODEL := Redmi Note 7 (AOSP)
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MANUFACTURER := Xiaomi
-
+$(call inherit-product, vendor/xiaomi/jasmine_sprout/jasmine_sprout-vendor.mk)
